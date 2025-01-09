@@ -10,9 +10,8 @@ public class MyArrayList {
             food.add(sc.next());
         }
         System.out.println("Your food list is : ");
-        for(int i =
-            0; i < food.size(); i++) {
-            System.out.println(food.get(i));
+        for (String s : food) {
+            System.out.println(s);
         }
     }
 }
