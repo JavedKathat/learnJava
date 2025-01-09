@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import static java.lang.System.exit;
-
 public class InsertAtLoc {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -9,7 +7,7 @@ public class InsertAtLoc {
         int n = sc.nextInt();
 
         System.out.println("Enter array a : ");
-        int a[] = new int[n];
+        int[] a = new int[n];
 
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
@@ -30,15 +28,23 @@ public class InsertAtLoc {
         if(loc < 0 || loc >= n) {
             System.out.println("Please enter a valid index");
         }else {
-            int b[] = new int[n+1];
+            int[] b = new int[n+1];
 
             for (int i = 0, j = 0; i < n; i++, j++) {
-                if(i == loc) {
-                    b[j]= val;
-                    b[j+1] = a[i];
-                    ++j;
-                }else{
-                    b[j] = a[i];
+//                if(i == loc) {
+//                    b[j]= val;
+//                    b[j+1] = a[i];
+//                    ++j;
+//                }else{
+//                    b[j] = a[i];
+//                }
+
+                if(i == loc){
+                    b[i] = val;
+                    b[i+1]= a[i];
+//                    ++i;
+                }else {
+                    b[i] = a[i];
                 }
             }
 
